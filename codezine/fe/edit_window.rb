@@ -29,6 +29,7 @@ class EditWindow
   def cursor_down
     if @cursor_y >= (@window.maxy - 1)
       scroll_down
+    elsif @cursor_y >= (@data.size - 1)
     else
       @cursor_y += 1
     end
