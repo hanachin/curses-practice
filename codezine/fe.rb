@@ -20,7 +20,7 @@ begin
 
   edit_window.display(filename)
   loop do
-    handler.execute(edit_window, edit_window.getch)
+    handler = handler.execute(edit_window, edit_window.getch)
   end
 ensure
   Curses.close_screen

@@ -26,6 +26,15 @@ class EditWindow
     @window.getch
   end
 
+  def input(input_ch)
+    @window.insch(input_ch)
+    @window.setpos(@cursor_y, @cursor_x += 1)
+  end
+
+  def delete
+    @window.delch
+  end
+
   def cursor_down
     if @cursor_y >= (@window.maxy - 1)
       scroll_down

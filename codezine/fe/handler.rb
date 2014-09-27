@@ -1,8 +1,13 @@
 require_relative 'edit_window'
+require_relative 'edit_handler'
 
 class Handler
   def execute(window, input_ch)
     case input_ch
+    when 27
+      EditHandler.new
+    when ?x
+      window.delete
     when ?s
       window.cursor_down
     when ?w
